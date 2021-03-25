@@ -1,57 +1,64 @@
+<!DOCTYPE html>
 <!--
   author: Lundeen, Bryan
-  web: https://github.com/lundeen-bryan/
+  web: https://github.com/lundeen-bryan/hundred2twitter
 -->
-<!DOCTYPE html>
 <html lang="en">
-
-<head>
-  <meta charset="UTF8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="shortcut icon" href="https://www.google.com/s2/favicons?domain=bryanlundeen.com" type="image/x-icon" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css"
-    integrity="sha512-g06pohSHYbSOHKq8tdDGXckE6C23Yt30xlTFDhrO0OcO/bNO2MWXb63oqU/Y23GDMNOon100eGHxZPBnT4QgMw=="
-    crossorigin="anonymous" />
-  <link type="text/css" rel="stylesheet" href="style.css" />
-  <title>Quote Generator</title>
-</head>
-
-<body>
-  <div class="quote-container" id="quote-container">
-    <!-- QUOTE.START -->
-    <label for="tweetLabel">Enter Tweet</label>
-    <div class="quote-text">
-      <textarea type="text" id="tweet" name="tweet" maxlength="280" size="50"></textarea>
-      <il class="fas fa-quote-left"></i>
-        <span id="quote"></span>
+  <head>
+    <meta charset="UTF8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="shortcut icon"
+      href="https://www.google.com/s2/favicons?domain=bryanlundeen.com"
+      type="image/x-icon"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css"
+      integrity="sha512-g06pohSHYbSOHKq8tdDGXckE6C23Yt30xlTFDhrO0OcO/bNO2MWXb63oqU/Y23GDMNOon100eGHxZPBnT4QgMw=="
+      crossorigin="anonymous"
+    />
+    <link type="text/css" rel="stylesheet" href="style.css" />
+    <title>100DaysOfCode2Twitter</title>
+  </head>
+  <body>
+    <div class="tweet-container" id="tweet-container">
+      <!-- TWEET.FORM.START -->
+      <label for="tweetLabel"
+        >Today is Day <span id="dayCount">46</span> of 100</label
+      >
+      <div class="tweet-text">
+        <textarea
+          type="text"
+          id="tweet"
+          name="tweet"
+          maxlength="280"
+        ></textarea>
+      </div>
+      <!-- BUTTONS.START -->
+      <div class="button-container">
+        <button class="twitter-button" id="twitter" title="Tweet This!">
+          <i class="fab fa-twitter"></i>
+        </button>
+        <button id="addTag">tag #100DaysOfCode</button>
+      </div>
+      <!-- BUTTONS.END -->
+      <!-- TWEET.FORM.END -->
     </div>
-    <div class="quote-author"><span id="author"></span></div>
-    <!-- BUTTONS.START -->
-    <div class="button-container">
-      <button class="twitter-button" id="twitter" title="Tweet This!">
-        <i class="fab fa-twitter"></i>
-      </button>
-      <button id="new-quote">New Quote</button>
+    <!-- FOOTER.START -->
+    <div class="footer">
+      <!-- Added name to footer for citation value -->
+      <p>
+        Brought to you by
+        <a href="https://www.bryanlundeen.com/" target="_blank"
+          >BryanLundeen.com</a
+        >
+      </p>
     </div>
-    <!-- BUTTONS.END -->
-    <!-- QUOTE.END -->
-  </div>
-  <!-- LOADER.START https://www.w3schools.com/howto/howto_css_loader.asp -->
-  <div class="loader" id="loader"></div>
-  <!-- LOADER.END -->
-  <!-- FOOTER.START -->
-  <div class="footer">
-    <!-- Added name to footer for citation value -->
-    <p>
-      Brought to you by
-      <a href="https://www.bryanlundeen.com/" target="_blank">BryanLundeen.com</a>
-    </p>
-  </div>
-  <!-- FOOTER.END -->
-  <!-- SCRIPT.START -->
-  <script type="text/javascript" src="script.js"></script>
-  <!-- SCRIPT.END -->
-</body>
-
+    <!-- FOOTER.END -->
+    <!-- SCRIPT.START -->
+    <script type="text/javascript" src="script.js"></script>
+    <!-- SCRIPT.END -->
+  </body>
 </html>

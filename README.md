@@ -2,19 +2,21 @@
 
 ![100DaysOfCode2TweetApp](codeTweet.png)
 
-> A javascript quote generator.
+> App to track a user's day in the #100DaysOfCode challenge and tweet it!
 
 ---
 
 ## Link To Project
 
-See the [Quote Maker](https://lundeen-bryan-100DaysOfCode2Twitter.netlify.app/) on Netlify.
+Live Link: [100DaysOfCode App](https://lundeen-bryan-100DaysOfCode2Twitter.netlify.app/).
+
+Blog Post: [Guide to the 100DaysOfCode and that App That Helps You Keep Track](https://bryanlundeen.blog/guide-to-the-100daysofcode-challenge-and-the-app-that-helps-you-keep-track/)
 
 ---
 
 ## Table of Contents
 
-[brief table of contents description].
+See the following headings for more info.
 
 - [Description](#description)
 - [How To Use](#how-to-use)
@@ -27,7 +29,7 @@ See the [Quote Maker](https://lundeen-bryan-100DaysOfCode2Twitter.netlify.app/) 
 
 ## Description
 
-description tbd
+This app has a date picker to select a start date, then it will display the number of days, it will allow you to add the #100DaysOfCode Twitter tag, and post it to Twitter.
 
 ### Technologies
 
@@ -40,13 +42,15 @@ description tbd
 
 ## How To Use
 
-tbd
+View the app here: [100DaysOfCode App](https://lundeen-bryan-100DaysOfCode2Twitter.netlify.app/).
 
-### Quotable.io is the API reference returns in json format
+Enter the date you first started the challenge, tab to the text area and start typing your tweet.
+
+### No APIs were harmed in the making of this app
 <br/>
 
 ```html
-    tbd
+    Would like to incorporate the Twitter API
 ```
 
 [Back To The Top](#100DaysOfCode2Twitter)
@@ -55,7 +59,7 @@ tbd
 
 ## References
 
-tbd
+none
 
 [Back To The Top](#100DaysOfCode2Twitter)
 
@@ -63,13 +67,25 @@ tbd
 
 ## Contributions
 
-tbd
+If you'd like to contribute, go to the Issues tab and add a new issue. Describe in detail what you'd like to work on and wait for approval before pushing a new feature. I don't want anyone to waste time building a feature if it won't be incorporated into the app.
+
+The general code of conduct is that you may make comments and contributions but that ultimately Bryan Lundeen or one of the admins he appoints will make the final determination of your status as a contributor. Any behavior deemed disrespectful by use of racial or sexist slurs will result in automatic denial of any requests you make until investigation can be conducted and a disposition is reached in the matter.
 
 <br/>
 
+### Testing Needed
+
+There are several tests that I'd like to try out on the app and I welcome anyone who would like to contribute to this effort. DM Bryan on twitter @LundeenBryan
+
 ### Project Status
 
-tbd
+In Development
+
+#### TODO
+
+- Add Twitter API for user login verification
+- Add a backend database to store user values
+- Make the App more responsive to smaller screensizes
 
 [Back To The Top](#100DaysOfCode2Twitter)
 

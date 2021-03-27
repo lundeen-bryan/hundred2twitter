@@ -24,18 +24,28 @@
   </head>
   <body>
     <div class="tweet-container" id="tweet-container">
-      <label for="date-picker">Starting from</label>
-      <input type="date" id="date-picker" />
-      <label for="tweetLabel"
-        >Today is Day
-        <input name="days" id="dayCount" type="number" min="1" max="100" /> of
-        100</label
-      >
+      <div class="info-fields">
+        <label for="date-picker">Starting from</label>
+        <input type="date" id="date-picker" />
+        <label for="tweetLabel"
+          >Today is Day
+          <input
+            name="days"
+            id="dayCount"
+            type="number"
+            min="1"
+            max="100"
+            size="3"
+          />
+          of 100</label
+        >
+      </div>
       <div class="tweet-text">
         <textarea
+          placeholder="...Click here and type your tweet"
           type="text"
           id="tweetText"
-          name="tweet"
+          name="tweetText"
           maxlength="280"
         ></textarea>
       </div>
@@ -47,7 +57,7 @@
           <i class="fas fa-arrow-right"></i><span id="red">20</span> characters
           left
         </div>
-        <button id="addTag">tag #100DaysOfCode</button>
+        <button class="addTagBtn" id="addTag">tag #100DaysOfCode</button>
       </div>
     </div>
     <div class="footer">

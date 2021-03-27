@@ -6,6 +6,7 @@ const textArea = document.getElementById('tweetText');
 const dayNumberInput = document.getElementById('dayCount');
 const hiddenDiv = document.getElementById('count');
 const redSpan = document.getElementById('red');
+const tweetPlaceholder = ` ...click here and start typing today's tweet!`;
 let dateStamp = new Date().toISOString().split('T'[0]).splice(0, 1);
 let dateBx = document.getElementById('date-picker');
 let savedValues;
@@ -34,7 +35,11 @@ function saveLocal() {
     startDateValue: startDate,
   };
   localStorage.setItem('dayKey', JSON.stringify(savedValues));
-  document.getElementById('tweetText').value = `Day${dayNumber}`;
+  setPlaceholderText(`Day${dayNumber}${tweetPlaceholder}`);
+}
+
+function setPlaceholderText(text) {
+  document.getElementsByName('tweetText')[0].placeholder = `${text}`;
 }
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -44,7 +49,7 @@ document.addEventListener('DOMContentLoaded', function () {
     startDate = savedValues.startDateValue.split('T'[0]).splice(0, 1);
     dayNumber = dateDiff(dateStamp, startDate);
     document.getElementById('dayCount').value = dayNumber;
-    document.getElementById('tweetText').value = `Day${dayNumber}`;
+    setPlaceholderText(`Day${dayNumber}${tweetPlaceholder}`);
     document.getElementById('date-picker').value = startDate;
   }
 });

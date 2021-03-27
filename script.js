@@ -7,14 +7,14 @@ let savedDayNum;
 
 //Tweet textarea
 function sendTweet() {
-  const tweetText = document.getElementById('tweet').value;
+  const tweetText = encodeURIComponent(document.getElementById('tweet').value);
   const twitteUrl = `https://twitter.com/intent/tweet?text=${tweetText}`;
   window.open(twitteUrl, '_blank'); //make twitter open in a new window
 }
 
 // add tag to tweet
 function insertTag() {
-  const tagText = ` %23100DaysOfCode`;
+  const tagText = ` #100DaysOfCode`;
   const textArea = document.getElementById('tweet').value;
   let newText = textArea.trim();
   document.getElementById('tweet').value = newText + tagText;
@@ -30,6 +30,7 @@ function startDate() {
     dateStart: dateStarted,
   };
   localStorage.setItem('dayCount', JSON.stringify(savedDayNum));
+  document.getElementById('tweet').value = `Day${dayValue}`;
 }
 
 // Wait for pg to load then pull vals from local storage
@@ -39,6 +40,7 @@ document.addEventListener('DOMContentLoaded', function () {
     dateStarted = savedDayNum.dateStart;
     savedDayNum = savedDayNum.dayNum;
     document.getElementById('dayCount').value = savedDayNum;
+    document.getElementById('tweet').value = `Day${savedDayNum}`;
   }
 });
 

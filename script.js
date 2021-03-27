@@ -1,50 +1,62 @@
 const twitterBtn = document.getElementById('twitter');
 const tagBtn = document.getElementById('addTag');
 const dayInput = document.getElementById('dayCount');
-let dayValue = document.getElementById('dayCount').value;
-let dateStarted;
-let savedDayNum;
+const tagText = ` #100DaysOfCode`;
+const textArea = document.getElementById('tweetText');
+const dayNumberInput = document.getElementById('dayCount');
+const hiddenDiv = document.getElementById('count');
+const redSpan = document.getElementById('red');
+let dateStamp;
+let savedValues;
 
-//Tweet textarea
 function sendTweet() {
-  const tweetText = encodeURIComponent(document.getElementById('tweet').value);
+  const tweetText = encodeURIComponent(
+    document.getElementById('tweetText').value
+  );
   const twitteUrl = `https://twitter.com/intent/tweet?text=${tweetText}`;
-  window.open(twitteUrl, '_blank'); //make twitter open in a new window
+  window.open(twitteUrl, '_blank');
 }
 
-// add tag to tweet
 function insertTag() {
-  const tagText = ` #100DaysOfCode`;
-  const textArea = document.getElementById('tweet').value;
-  let newText = textArea.trim();
-  document.getElementById('tweet').value = newText + tagText;
-  document.getElementById('tweet').focus();
+  let newText = textArea.value.trim();
+  document.getElementById('tweetText').value = newText + tagText;
+  document.getElementById('tweetText').focus();
 }
 
-// save date to start count in local store
-function startDate() {
-  dayValue = document.getElementById('dayCount').value;
-  dateStarted = new Date();
-  savedDayNum = {
-    dayNum: dayValue,
-    dateStart: dateStarted,
+function saveLocal() {
+  dayNumber = dayNumberInput.value;
+  dateStamp = new Date();
+  savedValues = {
+    dayValue: dayNumber,
+    dateValue: dateStamp,
   };
-  localStorage.setItem('dayCount', JSON.stringify(savedDayNum));
-  document.getElementById('tweet').value = `Day${dayValue}`;
+  localStorage.setItem('dayKey', JSON.stringify(savedValues));
+  document.getElementById('tweetText').value = `Day${dayNumber}`;
 }
 
-// Wait for pg to load then pull vals from local storage
 document.addEventListener('DOMContentLoaded', function () {
-  if (localStorage.getItem('dayCount')) {
-    savedDayNum = JSON.parse(localStorage.getItem('dayCount'));
-    dateStarted = savedDayNum.dateStart;
-    savedDayNum = savedDayNum.dayNum;
-    document.getElementById('dayCount').value = savedDayNum;
-    document.getElementById('tweet').value = `Day${savedDayNum}`;
+  if (localStorage.getItem('dayKey')) {
+    savedValues = JSON.parse(localStorage.getItem('dayKey'));
+    dayNumber = savedValues.dayValue;
+    dateStamp = savedValues.dateValue;
+    document.getElementById('dayCount').value = dayNumber;
+    document.getElementById('tweetText').value = `Day${dayNumber}`;
   }
 });
 
-// Event Listener
-twitterBtn.addEventListener('click', sendTweet); //if the tweet btn is clicked snd it to twitter
-tagBtn.addEventListener('click', insertTag); //if the tag btn is clicked insert tag
-dayInput.addEventListener('change', startDate); // save the date that the user changes the daycount
+textArea.addEventListener('input', function () {
+  const target = event.currentTarget;
+  const maxLength = target.getAttribute('maxlength');
+  const currentLength = target.value.length;
+  const countRemaining = maxLength - currentLength;
+  if (countRemaining < 21) {
+    hiddenDiv.removeAttribute('hidden');
+    redSpan.innerHTML = `${countRemaining}`;
+  } else {
+    hiddenDiv.setAttribute('hidden', 'hidden');
+  }
+});
+
+twitterBtn.addEventListener('click', sendTweet);
+tagBtn.addEventListener('click', insertTag);
+dayInput.addEventListener('change', saveLocal);

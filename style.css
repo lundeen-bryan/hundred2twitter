@@ -31,7 +31,7 @@ body {
   font-size: 2.75rem;
 }
 
-#tweet {
+#tweetText {
   height: 320px;
   width: 520px;
   display: flex;
@@ -79,7 +79,6 @@ button:active {
   font-size: 1.5rem;
 }
 
-/* MEDIA-QUERY.START */
 @media screen and (max-width: 1000px) {
   .tweet-container {
     margin: auto 10px;
@@ -89,9 +88,12 @@ button:active {
     font-size: 2.5rem;
   }
 }
-/* MEDIA-QUERY.END */
 
-/* FOOTER.START */
+#red {
+  color: red;
+  font-weight: bold;
+}
+
 .footer {
   position: fixed;
   left: 0;
@@ -99,4 +101,3 @@ button:active {
   width: 100%;
   background-color: rgba(121, 121, 121, 0.4);
 }
-/* FOOTER.END */

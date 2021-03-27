@@ -24,7 +24,6 @@
   </head>
   <body>
     <div class="tweet-container" id="tweet-container">
-      <!-- TWEET.FORM.START -->
       <label for="tweetLabel"
         >Today is Day
         <input name="days" id="dayCount" type="number" min="1" max="100" /> of
@@ -33,24 +32,23 @@
       <div class="tweet-text">
         <textarea
           type="text"
-          id="tweet"
+          id="tweetText"
           name="tweet"
           maxlength="280"
         ></textarea>
       </div>
-      <!-- BUTTONS.START -->
       <div class="button-container">
         <button class="twitter-button" id="twitter" title="Tweet This!">
           <i class="fab fa-twitter"></i>
         </button>
+        <div id="count" hidden>
+          <i class="fas fa-arrow-right"></i><span id="red">20</span> characters
+          left
+        </div>
         <button id="addTag">tag #100DaysOfCode</button>
       </div>
-      <!-- BUTTONS.END -->
-      <!-- TWEET.FORM.END -->
     </div>
-    <!-- FOOTER.START -->
     <div class="footer">
-      <!-- Added name to footer for citation value -->
       <p>
         Brought to you by
         <a href="https://www.bryanlundeen.com/" target="_blank"
@@ -58,9 +56,6 @@
         >
       </p>
     </div>
-    <!-- FOOTER.END -->
-    <!-- SCRIPT.START -->
     <script type="text/javascript" src="script.js"></script>
-    <!-- SCRIPT.END -->
   </body>
 </html>

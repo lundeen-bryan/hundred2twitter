@@ -6,8 +6,11 @@ const textArea = document.getElementById('tweetText');
 const dayNumberInput = document.getElementById('dayCount');
 const hiddenDiv = document.getElementById('count');
 const redSpan = document.getElementById('red');
-let dateStamp;
+let dateStamp = new Date().toISOString().split('T'[0]).splice(0, 1);
+let dateBx = document.getElementById('date-picker');
 let savedValues;
+let startDate;
+let dayNumber;
 
 function sendTweet() {
   const tweetText = encodeURIComponent(
@@ -25,10 +28,10 @@ function insertTag() {
 
 function saveLocal() {
   dayNumber = dayNumberInput.value;
-  dateStamp = new Date();
+  startDate = new Date();
   savedValues = {
     dayValue: dayNumber,
-    dateValue: dateStamp,
+    startDateValue: startDate,
   };
   localStorage.setItem('dayKey', JSON.stringify(savedValues));
   document.getElementById('tweetText').value = `Day${dayNumber}`;
@@ -37,10 +40,12 @@ function saveLocal() {
 document.addEventListener('DOMContentLoaded', function () {
   if (localStorage.getItem('dayKey')) {
     savedValues = JSON.parse(localStorage.getItem('dayKey'));
-    dayNumber = savedValues.dayValue;
-    dateStamp = savedValues.dateValue;
+    dayNumber = parseInt(savedValues.dayValue);
+    startDate = savedValues.startDateValue.split('T'[0]).splice(0, 1);
+    dayNumber = dateDiff(dateStamp, startDate);
     document.getElementById('dayCount').value = dayNumber;
     document.getElementById('tweetText').value = `Day${dayNumber}`;
+    document.getElementById('date-picker').value = startDate;
   }
 });
 
@@ -57,6 +62,24 @@ textArea.addEventListener('input', function () {
   }
 });
 
+function dateDiff(startDate, endDate) {
+  return Math.floor(Date.parse(startDate) - Date.parse(endDate)) / 86400000;
+}
+
+function changeStartDate() {
+  startDate = dateBx.value;
+  dayNumber = dayNumberInput.value;
+  dayNumber = dateDiff(dateStamp, startDate);
+  savedValues = {
+    dayValue: dayNumber,
+    startDateValue: startDate,
+  };
+  localStorage.setItem('dayKey', JSON.stringify(savedValues));
+  document.getElementById('tweetText').value = `Day${dayNumber}`;
+  document.getElementById('dayCount').value = dayNumber;
+}
+
 twitterBtn.addEventListener('click', sendTweet);
 tagBtn.addEventListener('click', insertTag);
 dayInput.addEventListener('change', saveLocal);
+dateBx.addEventListener('change', changeStartDate);

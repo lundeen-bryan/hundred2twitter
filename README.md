@@ -1,6 +1,6 @@
-# Quote Maker
+# 100DaysOfCode2Twitter
 
-![Quote Maker Screenshot](quote-maker.png)
+![100DaysOfCode2TweetApp](codeTweet.png)
 
 > A javascript quote generator.
 
@@ -8,7 +8,7 @@
 
 ## Link To Project
 
-See the [Quote Maker](https://lundeen-bryan-quote-maker.netlify.app/) on Netlify.
+See the [Quote Maker](https://lundeen-bryan-100DaysOfCode2Twitter.netlify.app/) on Netlify.
 
 ---
 
@@ -27,61 +27,58 @@ See the [Quote Maker](https://lundeen-bryan-quote-maker.netlify.app/) on Netlify
 
 ## Description
 
-This is one of the projects on Andrei Neagoie’s Javascript Course. I changed a few small things such as adding a quote mark to the string sent to twitter, more concise self-explanatory naming conventions and a completely different API.
-
-Project based on [JavaScript Web Projects: 20 Projects to Build Your Portfolio](https://www.udemy.com/course/javascript-web-projects-to-build-your-portfolio-resume/)
+description tbd
 
 ### Technologies
 
 - HTML/CSS
 - Vanilla Javascript
 
-[Back To The Top](#quote-maker)
+[Back To The Top](#100DaysOfCode2Twitter)
 
 ---
 
 ## How To Use
 
-Pretty self-explanatory: upon loading it will show you a quote and if you like the quote press the twitter button and it will load the text and author’s name into a tweet for you. If you prefer a new quote, then press the “new quote” button.
-
+tbd
 
 ### Quotable.io is the API reference returns in json format
 <br/>
 
 ```html
-    {"_id":"k3s9mCR6CK","tags":["friendship"],"content":"Friendship, like the immortality of the soul, is too good to be believed.","author":"Ralph Waldo Emerson","length":73}
+    tbd
 ```
 
-[Back To The Top](#quote-maker)
+[Back To The Top](#100DaysOfCode2Twitter)
 
 ---
 
 ## References
 
+tbd
 
-
-[Back To The Top](#quote-maker)
+[Back To The Top](#100DaysOfCode2Twitter)
 
 ---
 
 ## Contributions
 
-I am currently not accepting contributions to this project, however feel free to leave comments on the issues tab of this project for consideration.
+tbd
 
 <br/>
 
 ### Project Status
 
-The current status of this project is in development.
+tbd
 
-[Back To The Top](#quote-maker)
+[Back To The Top](#100DaysOfCode2Twitter)
 
 ---
 
 ## License
 
 <mitlicense>
-Copyright &copy; [2020] [Bryan Lundeen]
+Copyright &copy; [2021] [Bryan Lundeen]
 <br/><br/>
 MIT License
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
@@ -101,7 +98,7 @@ Please see [GitHub’s](https://docs.github.com/en/github/site-policy/dmca-taked
 <dmca>
 -->
 
-[Back To The Top](#quote-maker)
+[Back To The Top](#100DaysOfCode2Twitter)
 
 ---
 
@@ -112,5 +109,5 @@ Please see [GitHub’s](https://docs.github.com/en/github/site-policy/dmca-taked
 - Twitter – [@LundeenBryan](https://twitter.com/LundeenBryan)
 - Facebook – [realbryanlundeen](https://www.facebook.com/realbryanlundeen)
 
-[Back To The Top](#quote-maker)
+[Back To The Top](#100DaysOfCode2Twitter)
 
